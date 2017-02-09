@@ -108,7 +108,7 @@ def get_jira_client(connection):
     if not password:
         password = getpass.getpass("Password: ")
 
-    return JIRA({'server': url}, basic_auth=(username, password))
+    return JIRA({'server': url, 'verify': false}, basic_auth=(username, password))
 
 def to_json_string(value):
     if isinstance(value, pd.Timestamp):
